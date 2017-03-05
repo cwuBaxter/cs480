@@ -27,9 +27,7 @@
 		27ADB3461E4D050D00CC83C9 /* ModalAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB3451E4D050D00CC83C9 /* ModalAudioViewController.swift */; };
 		5F11E2BBF8D28736E18B90BA /* Pods_PETPAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA080A0939199039DACB4900 /* Pods_PETPAT.framework */; };
 		AC4795AEFDF76E25E4BEC96E /* Pods_PETPATUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862E17FE2FAFC383C57206AF /* Pods_PETPATUITests.framework */; };
-		E193B66A1E68B3E200391DD5 /* GoogleService-Info-3.plist in Resources */ = {isa = PBXBuildFile; fileRef = E193B6691E68B3E200391DD5 /* GoogleService-Info-3.plist */; };
-		E193B66B1E68B3E200391DD5 /* GoogleService-Info-3.plist in Resources */ = {isa = PBXBuildFile; fileRef = E193B6691E68B3E200391DD5 /* GoogleService-Info-3.plist */; };
-		E193B66C1E68B3E200391DD5 /* GoogleService-Info-3.plist in Resources */ = {isa = PBXBuildFile; fileRef = E193B6691E68B3E200391DD5 /* GoogleService-Info-3.plist */; };
+		E13643971E6CBCEE001D863D /* GoogleService-Info-2.plist in Resources */ = {isa = PBXBuildFile; fileRef = E13643961E6CBCEE001D863D /* GoogleService-Info-2.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +77,7 @@
 		D6AB85459702799B681CCD08 /* Pods-PETPATUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PETPATUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PETPATUITests/Pods-PETPATUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DA080A0939199039DACB4900 /* Pods_PETPAT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PETPAT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF4D5DF2E4F0B32D705DD07 /* Pods-PETPATTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PETPATTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PETPATTests/Pods-PETPATTests.release.xcconfig"; sourceTree = "<group>"; };
-		E193B6691E68B3E200391DD5 /* GoogleService-Info-3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info-3.plist"; path = "../Downloads/GoogleService-Info-3.plist"; sourceTree = "<group>"; };
+		E13643961E6CBCEE001D863D /* GoogleService-Info-2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-2.plist"; sourceTree = "<group>"; };
 		E19F05895E1E8160E3B2E62A /* Pods-PETPAT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PETPAT.release.xcconfig"; path = "Pods/Target Support Files/Pods-PETPAT/Pods-PETPAT.release.xcconfig"; sourceTree = "<group>"; };
 		EDBAC956F08F028BE3F2A280 /* Pods_PETPATTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PETPATTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B0911ED946A0552A6A92E0 /* Pods-PETPATTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PETPATTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PETPATTests/Pods-PETPATTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,7 +114,7 @@
 		27ADB2CE1E4BDF2F00CC83C9 = {
 			isa = PBXGroup;
 			children = (
-				E193B6691E68B3E200391DD5 /* GoogleService-Info-3.plist */,
+				E13643961E6CBCEE001D863D /* GoogleService-Info-2.plist */,
 				27ADB2D91E4BDF2F00CC83C9 /* PETPAT */,
 				27ADB2F11E4BDF2F00CC83C9 /* PETPATTests */,
 				27ADB2FC1E4BDF2F00CC83C9 /* PETPATUITests */,
@@ -319,8 +317,8 @@
 			files = (
 				27ADB2E81E4BDF2F00CC83C9 /* LaunchScreen.storyboard in Resources */,
 				27ADB2E51E4BDF2F00CC83C9 /* Assets.xcassets in Resources */,
+				E13643971E6CBCEE001D863D /* GoogleService-Info-2.plist in Resources */,
 				27ADB2E01E4BDF2F00CC83C9 /* Main.storyboard in Resources */,
-				E193B66A1E68B3E200391DD5 /* GoogleService-Info-3.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +326,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E193B66B1E68B3E200391DD5 /* GoogleService-Info-3.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +333,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E193B66C1E68B3E200391DD5 /* GoogleService-Info-3.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
