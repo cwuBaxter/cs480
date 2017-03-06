@@ -9,6 +9,11 @@
 import UIKit
 
 class RubricViewController: UIViewController {
+    
+    @IBOutlet weak var testLabel: UILabel!
+    
+    var count = 0
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +26,19 @@ class RubricViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //SEGUES
     
-    @IBAction func rubricToTimerSegue(_ sender: UISwipeGestureRecognizer) {
+    
+    
+    @IBAction func incrementTest(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "rubricToTimer", sender: self)
+        count += 1
+        testLabel.text = String(count)
     }
+    
+    
+    
+    
+    //SEGUES
     
     
     /*

@@ -10,22 +10,22 @@ import UIKit
 
     // GLOBAL VARIABLES
 
-    // time counters
-    var totalTime1 =  0,
-        totalTime2 =  0,
-        totalTime3 =  0,
-        totalTime4 =  0,
-        totalTime5 =  0,
-        totalTime6 =  0,
-        totalTime7 =  0,
-        totalTime8 =  0,
-        totalTime9 =  0,
-        totalTime10 = 0,
-        totalTime11 = 0,
-        totalTime12 = 0,
-        totalTime13 = 0,
-        totalTime14 = 0,
-        totalTime15 = 0
+//    // time counters
+//    var totalTime1 =  0,
+//        totalTime2 =  0,
+//        totalTime3 =  0,
+//        totalTime4 =  0,
+//        totalTime5 =  0,
+//        totalTime6 =  0,
+//        totalTime7 =  0,
+//        totalTime8 =  0,
+//        totalTime9 =  0,
+//        totalTime10 = 0,
+//        totalTime11 = 0,
+//        totalTime12 = 0,
+//        totalTime13 = 0,
+//        totalTime14 = 0,
+//        totalTime15 = 0
 
     // increment counters
     var count1 = 0,
@@ -40,8 +40,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
+    
+    @IBOutlet weak var testLabel: UILabel!
+    
+    
+    func secondsToHoursMinutesSeconds (time : Int) -> (String) {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
+    
+    
     // timer buttons
     
     @IBOutlet weak var timerButton1: UIButton!
@@ -322,10 +342,8 @@ class ViewController: UIViewController {
     // Start Various Timers
     func action()
     {
-        print("still running \(totalTime1)")
         totalTime1 += 1
-        timeLabel1.text = String(totalTime1)
-//        print("Action 1 - totalTime1 = \(totalTime1)!")
+        testLabel.text = secondsToHoursMinutesSeconds(time: totalTime1)
     }
     
     func action2()
@@ -427,10 +445,6 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
     //SEGUES
     
     
@@ -441,60 +455,6 @@ class ViewController: UIViewController {
     @IBAction func timerToGeneratorSegue(_ sender: UISwipeGestureRecognizer) {
         performSegue(withIdentifier: "timerToGenerator", sender: self)
     }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        timeLabel1.text = String(totalTime1)
-        timeLabel2.text = String(totalTime2)
-        timeLabel3.text = String(totalTime3)
-        timeLabel4.text = String(totalTime4)
-        timeLabel5.text = String(totalTime5)
-        timeLabel6.text = String(totalTime6)
-        timeLabel7.text = String(totalTime7)
-        timeLabel8.text = String(totalTime8)
-        timeLabel9.text = String(totalTime9)
-        timeLabel10.text = String(totalTime10)
-        timeLabel11.text = String(totalTime11)
-        timeLabel12.text = String(totalTime12)
-        timeLabel13.text = String(totalTime13)
-        timeLabel14.text = String(totalTime14)
-        timeLabel15.text = String(totalTime15)
-        
-        if timeLabel1.text! > String(0) {
-            print("okay ill try dad")
-            
-//            stopButton1.sendActions(for: UIControlEvents.touchUpInside)
-//            timerButton1.sendActions(for: UIControlEvents.touchUpInside)
-            
-        } else {
-            print(timeLabel1.text! > String(0))
-        }
-        
-        
-        countLabel1.text = String(count1)
-        countLabel2.text = String(count2)
-        countLabel3.text = String(count3)
-        countLabel4.text = String(count4)
-        countLabel5.text = String(count5)
-        countLabel6.text = String(count6)
-        countLabel7.text = String(count7)
-        countLabel8.text = String(count8)
-        countLabel9.text = String(count9)
-        
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
-    
     
 }
 

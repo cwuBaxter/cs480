@@ -81,6 +81,7 @@ class ThirdViewController: UIViewController {
                 playButton.isHidden = false
             } else {
                 print("There was a problem recording")
+                playButton.isHidden = false
             }
         }
         
@@ -126,7 +127,9 @@ class ThirdViewController: UIViewController {
             audioPlayer.prepareToPlay()
             audioPlayer.play()
             
-            sendAudio()
+            print(audioPlayer.url)
+            
+//            sendAudio()
             
         } catch {
             print(error)
@@ -137,7 +140,7 @@ class ThirdViewController: UIViewController {
     
     func audioFileLocation () -> String {
         
-        return NSTemporaryDirectory().appending("audioRecording.m4a")
+        return NSTemporaryDirectory().appending(NSUUID().uuidString + ".m4a")
     }
     
     func audioRecorderSettings () -> [String:Any] {
