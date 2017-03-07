@@ -7,6 +7,10 @@
 
 import UIKit
 
+
+// Global Variables
+
+
 var totalQuestionCount1  = 0,
     totalQuestionCount2  = 0,
     totalQuestionCount3  = 0,
@@ -264,17 +268,43 @@ class MainRubricView: UIViewController {
     
     
     
+    // MARK: Modal View Logic
+    
+    @IBOutlet weak var modalPopUpComment: UIView!
+    @IBOutlet weak var modalPopUpCommentTextView: UITextView!
+    
+    
+    
     @IBAction func popUpComment(_ sender: UIButton)
     {
+        modalPopUpComment.transform = CGAffineTransform(translationX: 936, y: -200)
         
     }
+    
+    @IBAction func saveComment(_ sender: UIButton)
+    {
+        modalPopUpComment.transform = CGAffineTransform(translationX: -936, y: 200)
+    }
+    
+    
+    @IBAction func cancelAddComment(_ sender: UIButton)
+    {
+        modalPopUpComment.transform = CGAffineTransform(translationX: -936, y: 200)
+    }
+    
     
     
     @IBAction func deleteComment(_ sender: UIButton)
     {
-        
+
     }
     
+    
+    
+    
+    
+    
+    // MARK: Long Press Edit Label Logic
     
     func editLabel1 (_ sender: UILongPressGestureRecognizer)
     {
@@ -374,6 +404,11 @@ class MainRubricView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // add stylistic conversions to modal view: 'popUpComment'
+        
+        
         
         let longPressGesture1 = UILongPressGestureRecognizer(target: self, action: #selector(MainRubricView.editLabel1))
         let longPressGesture2 = UILongPressGestureRecognizer(target: self, action: #selector(MainRubricView.editLabel2))

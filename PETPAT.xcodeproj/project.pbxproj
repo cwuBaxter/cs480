@@ -13,28 +13,16 @@
 		270247CF1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270247CE1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift */; };
 		270247D11E6DAC78000BB72C /* MainRubricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270247D01E6DAC78000BB72C /* MainRubricView.swift */; };
 		270247D31E6DACC2000BB72C /* SecondaryRubricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270247D21E6DACC2000BB72C /* SecondaryRubricView.swift */; };
-		2755C3611E6A3CCE0038A838 /* TimerSecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755C3601E6A3CCE0038A838 /* TimerSecondaryViewController.swift */; };
 		27885AE01E6C7A6B002C4745 /* SecondaryTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27885ADF1E6C7A6B002C4745 /* SecondaryTimerView.swift */; };
 		27918C671E6BBEB20010765E /* MainTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27918C661E6BBEB20010765E /* MainTimerView.swift */; };
 		27ADB2DB1E4BDF2F00CC83C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB2DA1E4BDF2F00CC83C9 /* AppDelegate.swift */; };
-		27ADB2DD1E4BDF2F00CC83C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB2DC1E4BDF2F00CC83C9 /* ViewController.swift */; };
 		27ADB2E01E4BDF2F00CC83C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27ADB2DE1E4BDF2F00CC83C9 /* Main.storyboard */; };
 		27ADB2E31E4BDF2F00CC83C9 /* PETPAT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB2E11E4BDF2F00CC83C9 /* PETPAT.xcdatamodeld */; };
 		27ADB2E51E4BDF2F00CC83C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27ADB2E41E4BDF2F00CC83C9 /* Assets.xcassets */; };
 		27ADB2E81E4BDF2F00CC83C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27ADB2E61E4BDF2F00CC83C9 /* LaunchScreen.storyboard */; };
 		27ADB2F31E4BDF2F00CC83C9 /* PETPATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB2F21E4BDF2F00CC83C9 /* PETPATTests.swift */; };
 		27ADB2FE1E4BDF2F00CC83C9 /* PETPATUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB2FD1E4BDF2F00CC83C9 /* PETPATUITests.swift */; };
-		27ADB30C1E4C31F700CC83C9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB30B1E4C31F700CC83C9 /* SecondViewController.swift */; };
-		27ADB3301E4C4F9E00CC83C9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB32F1E4C4F9E00CC83C9 /* ThirdViewController.swift */; };
 		27ADB3381E4CE3C900CC83C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB3371E4CE3C900CC83C9 /* LoginViewController.swift */; };
-		27ADB33C1E4CE50500CC83C9 /* RubricViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB33B1E4CE50500CC83C9 /* RubricViewController.swift */; };
-		27ADB33E1E4CE57300CC83C9 /* GeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB33D1E4CE57300CC83C9 /* GeneratorViewController.swift */; };
-		27ADB3401E4CE68300CC83C9 /* TimerReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB33F1E4CE68300CC83C9 /* TimerReportViewController.swift */; };
-		27ADB3421E4CE69300CC83C9 /* RubricReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB3411E4CE69300CC83C9 /* RubricReportViewController.swift */; };
-		27ADB3441E4D04FB00CC83C9 /* ModalCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB3431E4D04FB00CC83C9 /* ModalCommentViewController.swift */; };
-		27ADB3461E4D050D00CC83C9 /* ModalAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB3451E4D050D00CC83C9 /* ModalAudioViewController.swift */; };
-		27E2B41C1E6A4C0D00D471E8 /* RubricMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2B41B1E6A4C0D00D471E8 /* RubricMainViewController.swift */; };
-		27FDD3AC1E67FE3C001A51ED /* TimerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FDD3AB1E67FE3C001A51ED /* TimerMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +49,10 @@
 		270247CE1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingCollectionViewCell.swift; sourceTree = "<group>"; };
 		270247D01E6DAC78000BB72C /* MainRubricView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRubricView.swift; sourceTree = "<group>"; };
 		270247D21E6DACC2000BB72C /* SecondaryRubricView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryRubricView.swift; sourceTree = "<group>"; };
-		2755C3601E6A3CCE0038A838 /* TimerSecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerSecondaryViewController.swift; sourceTree = "<group>"; };
 		27885ADF1E6C7A6B002C4745 /* SecondaryTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryTimerView.swift; sourceTree = "<group>"; };
 		27918C661E6BBEB20010765E /* MainTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTimerView.swift; sourceTree = "<group>"; };
 		27ADB2D71E4BDF2F00CC83C9 /* PETPAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PETPAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27ADB2DA1E4BDF2F00CC83C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27ADB2DC1E4BDF2F00CC83C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		27ADB2DF1E4BDF2F00CC83C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27ADB2E21E4BDF2F00CC83C9 /* PETPAT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PETPAT.xcdatamodel; sourceTree = "<group>"; };
 		27ADB2E41E4BDF2F00CC83C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,17 +64,7 @@
 		27ADB2F91E4BDF2F00CC83C9 /* PETPATUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PETPATUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27ADB2FD1E4BDF2F00CC83C9 /* PETPATUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETPATUITests.swift; sourceTree = "<group>"; };
 		27ADB2FF1E4BDF2F00CC83C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27ADB30B1E4C31F700CC83C9 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		27ADB32F1E4C4F9E00CC83C9 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		27ADB3371E4CE3C900CC83C9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		27ADB33B1E4CE50500CC83C9 /* RubricViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubricViewController.swift; sourceTree = "<group>"; };
-		27ADB33D1E4CE57300CC83C9 /* GeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratorViewController.swift; sourceTree = "<group>"; };
-		27ADB33F1E4CE68300CC83C9 /* TimerReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerReportViewController.swift; sourceTree = "<group>"; };
-		27ADB3411E4CE69300CC83C9 /* RubricReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubricReportViewController.swift; sourceTree = "<group>"; };
-		27ADB3431E4D04FB00CC83C9 /* ModalCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalCommentViewController.swift; sourceTree = "<group>"; };
-		27ADB3451E4D050D00CC83C9 /* ModalAudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalAudioViewController.swift; sourceTree = "<group>"; };
-		27E2B41B1E6A4C0D00D471E8 /* RubricMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubricMainViewController.swift; sourceTree = "<group>"; };
-		27FDD3AB1E67FE3C001A51ED /* TimerMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,24 +133,12 @@
 				270247CC1E6D2577000BB72C /* RecordingsCollectionView.swift */,
 				270247CE1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift */,
 				27ADB3371E4CE3C900CC83C9 /* LoginViewController.swift */,
-				27FDD3AB1E67FE3C001A51ED /* TimerMainViewController.swift */,
-				2755C3601E6A3CCE0038A838 /* TimerSecondaryViewController.swift */,
-				27E2B41B1E6A4C0D00D471E8 /* RubricMainViewController.swift */,
-				27ADB33B1E4CE50500CC83C9 /* RubricViewController.swift */,
 				27ADB2DA1E4BDF2F00CC83C9 /* AppDelegate.swift */,
-				27ADB2DC1E4BDF2F00CC83C9 /* ViewController.swift */,
-				27ADB30B1E4C31F700CC83C9 /* SecondViewController.swift */,
-				27ADB32F1E4C4F9E00CC83C9 /* ThirdViewController.swift */,
-				27ADB33D1E4CE57300CC83C9 /* GeneratorViewController.swift */,
-				27ADB33F1E4CE68300CC83C9 /* TimerReportViewController.swift */,
-				27ADB3411E4CE69300CC83C9 /* RubricReportViewController.swift */,
 				27ADB2DE1E4BDF2F00CC83C9 /* Main.storyboard */,
 				27ADB2E41E4BDF2F00CC83C9 /* Assets.xcassets */,
 				27ADB2E61E4BDF2F00CC83C9 /* LaunchScreen.storyboard */,
 				27ADB2E91E4BDF2F00CC83C9 /* Info.plist */,
 				27ADB2E11E4BDF2F00CC83C9 /* PETPAT.xcdatamodeld */,
-				27ADB3431E4D04FB00CC83C9 /* ModalCommentViewController.swift */,
-				27ADB3451E4D050D00CC83C9 /* ModalAudioViewController.swift */,
 			);
 			path = PETPAT;
 			sourceTree = "<group>";
@@ -334,27 +298,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27E2B41C1E6A4C0D00D471E8 /* RubricMainViewController.swift in Sources */,
 				270247CD1E6D2577000BB72C /* RecordingsCollectionView.swift in Sources */,
 				27ADB3381E4CE3C900CC83C9 /* LoginViewController.swift in Sources */,
-				27ADB3441E4D04FB00CC83C9 /* ModalCommentViewController.swift in Sources */,
 				270247CF1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift in Sources */,
-				27ADB30C1E4C31F700CC83C9 /* SecondViewController.swift in Sources */,
 				270247D31E6DACC2000BB72C /* SecondaryRubricView.swift in Sources */,
 				27ADB2E31E4BDF2F00CC83C9 /* PETPAT.xcdatamodeld in Sources */,
 				27885AE01E6C7A6B002C4745 /* SecondaryTimerView.swift in Sources */,
 				270247D11E6DAC78000BB72C /* MainRubricView.swift in Sources */,
-				27ADB3301E4C4F9E00CC83C9 /* ThirdViewController.swift in Sources */,
-				27ADB3421E4CE69300CC83C9 /* RubricReportViewController.swift in Sources */,
-				27ADB2DD1E4BDF2F00CC83C9 /* ViewController.swift in Sources */,
-				2755C3611E6A3CCE0038A838 /* TimerSecondaryViewController.swift in Sources */,
-				27ADB33C1E4CE50500CC83C9 /* RubricViewController.swift in Sources */,
-				27ADB3401E4CE68300CC83C9 /* TimerReportViewController.swift in Sources */,
-				27FDD3AC1E67FE3C001A51ED /* TimerMainViewController.swift in Sources */,
-				27ADB33E1E4CE57300CC83C9 /* GeneratorViewController.swift in Sources */,
 				27918C671E6BBEB20010765E /* MainTimerView.swift in Sources */,
 				27ADB2DB1E4BDF2F00CC83C9 /* AppDelegate.swift in Sources */,
-				27ADB3461E4D050D00CC83C9 /* ModalAudioViewController.swift in Sources */,
 				270247C61E6D0E74000BB72C /* AudioRecorderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

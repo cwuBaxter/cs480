@@ -807,7 +807,7 @@ class SecondaryTimerView: UIViewController {
     }
     
     func longPressEditTimer5(_ sender: UILongPressGestureRecognizer) {
-
+        print("here")
         secTimedBehaviorLabel5.text = secondaryEditLabelTextField.text
     }
     

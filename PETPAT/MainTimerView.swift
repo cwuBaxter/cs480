@@ -7,6 +7,10 @@
 
 import UIKit
 
+// MARK: Global Variables
+
+
+// holds the total time for each timer object
 var totalTime1  = 0,
     totalTime2  = 0,
     totalTime3  = 0,
@@ -23,6 +27,8 @@ var totalTime1  = 0,
     totalTime14 = 0,
     totalTime15 = 0
 
+
+// holds the total count for each counter object
 var totalCount1  = 0,
     totalCount2  = 0,
     totalCount3  = 0,
@@ -35,15 +41,10 @@ var totalCount1  = 0,
     totalCount10 = 0
 
 
-
-func testGlobalFunctions() {
-//    print(timeBehaviorLabel1.text)
-}
-
-
 class MainTimerView: UIViewController {
 
     
+    // Outlet: text field for editing respective label names
     @IBOutlet weak var mainEditLabelTextField: UITextField!
 
     
@@ -65,7 +66,9 @@ class MainTimerView: UIViewController {
         timer14 = Timer(),
         timer15 = Timer()
     
-    // Button Label Placeholders for Switch Cases
+    
+    
+    // Label Placeholders for Switch Cases
     var timerButtonLabels = "",
     stopButtonLabels  = "",
     incrementButtonLabels = "",
@@ -73,6 +76,7 @@ class MainTimerView: UIViewController {
     
     
     
+    // Outlet: timer buttons
     @IBOutlet weak var mainTimerButton1: UIButton!
     @IBOutlet weak var mainTimerButton2: UIButton!
     @IBOutlet weak var mainTimerButton3: UIButton!
@@ -90,6 +94,7 @@ class MainTimerView: UIViewController {
     @IBOutlet weak var mainTimerButton15: UIButton!
    
     
+    // Outlet: counter buttons
     @IBOutlet weak var mainCounterButton1: UIButton!
     @IBOutlet weak var mainCounterButton2: UIButton!
     @IBOutlet weak var mainCounterButton3: UIButton!
@@ -103,6 +108,7 @@ class MainTimerView: UIViewController {
     
     
     
+    // Outlet: timer behavior labels (e.g. Instruction)
     @IBOutlet weak var timeBehaviorLabel1: UILabel!
     @IBOutlet weak var timeBehaviorLabel2: UILabel!
     @IBOutlet weak var timeBehaviorLabel3: UILabel!
@@ -120,6 +126,7 @@ class MainTimerView: UIViewController {
     @IBOutlet weak var timeBehaviorLabel15: UILabel!
     
     
+    // Outlet: counter behavior labels (e.g.
     @IBOutlet weak var countBehaviorLabel1: UILabel!
     @IBOutlet weak var countBehaviorLabel2: UILabel!
     @IBOutlet weak var countBehaviorLabel3: UILabel!
@@ -133,7 +140,7 @@ class MainTimerView: UIViewController {
 
     
     
-    
+    // Outlet: time counted labels (e.g. 00:00:05)
     @IBOutlet weak var timerLabel1: UILabel!
     @IBOutlet weak var timerLabel2: UILabel!
     @IBOutlet weak var timerLabel3: UILabel!
@@ -151,6 +158,7 @@ class MainTimerView: UIViewController {
     @IBOutlet weak var timerLabel15: UILabel!
     
     
+    // Outlet: total count labels (e.g. 24)
     @IBOutlet weak var countLabel1: UILabel!
     @IBOutlet weak var countLabel2: UILabel!
     @IBOutlet weak var countLabel3: UILabel!
@@ -162,6 +170,10 @@ class MainTimerView: UIViewController {
     @IBOutlet weak var countLabel9: UILabel!
     @IBOutlet weak var countLabel10: UILabel!
     
+    
+    
+    
+    // MARK: Start Timer functions, initializes each timer object and sets their respective action functions ( e.g. action1() )
     
     
     func startTimer1(_ sender: UITapGestureRecognizer) {
@@ -269,143 +281,16 @@ class MainTimerView: UIViewController {
         timer15 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action15), userInfo: nil, repeats: true)
     }
     
-    
 
     
     
-//    @IBAction func startTimer(_ sender: UITapGestureRecognizer)
-//    {
-////        timerButtonLabels = sender.currentTitle!
-//        timerButtonLabels = ""
-//        
-//        let buttonTitle = sender.view as! UIButton
-//        
-////        timerButtonLabels = buttonTitle.title
-//        
-//        print(timerButtonLabels)
-//        
-//        switch timerButtonLabels {
-//            
-//        case "mainTimerButton1":
-//            enableGroupOneTimers()
-//            mainTimerButton1.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action1), userInfo: nil, repeats: true)
-//            
-//        case "mainTimerButton2":
-//            enableGroupOneTimers()
-//            mainTimerButton2.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action2), userInfo: nil, repeats: true)
-//            
-//            
-//            
-//        case "mainTimerButton3":
-//            enableGroupOneTimers()
-//            mainTimerButton3.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer3 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action3), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton4":
-//            enableGroupOneTimers()
-//            mainTimerButton4.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer4 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action4), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton5":
-//            enableGroupOneTimers()
-//            mainTimerButton5.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer5 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action5), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton6":
-//            enableGroupOneTimers()
-//            mainTimerButton6.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer6 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action6), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton7":
-//            enableGroupOneTimers()
-//            mainTimerButton7.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer7 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action7), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton8":
-//            enableGroupOneTimers()
-//            mainTimerButton8.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer8 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action8), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton9":
-//            enableGroupOneTimers()
-//            mainTimerButton9.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer9 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action9), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton10":
-//            enableGroupTwoTimers()
-//            mainTimerButton10.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer10 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action10), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton11":
-//            enableGroupTwoTimers()
-//            mainTimerButton11.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer11 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action11), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton12":
-//            enableGroupTwoTimers()
-//            mainTimerButton12.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer12 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action12), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton13":
-//            enableGroupTwoTimers()
-//            mainTimerButton13.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer13 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action13), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton14":
-//            enableGroupTwoTimers()
-//            mainTimerButton14.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer14 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action14), userInfo: nil, repeats: true)
-//            
-//            
-//        case "mainTimerButton15":
-//            enableGroupTwoTimers()
-//            mainTimerButton15.isEnabled = false
-//            invalidateGroupOneTimers()
-//            timer15 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action15), userInfo: nil, repeats: true)
-//            
-//            
-//            
-//        default:
-//            
-//            print("Error In Start Timer Function")
-//            
-//        }
-//
-//    }
-
+    // MARK: Stop Timer functions - invalidates each respective timer object ( e.g. timer1.invalidate() ) and enables each timer button
+    
     
     @IBAction func stopTimer(_ sender: UIButton)
     {
+        // holds the title of the current UIButton sender (e.g. sender.currentTitle = "mainInvalidateButton1")
         stopButtonLabels = sender.currentTitle!
-        
-        print(stopButtonLabels)
         
         switch stopButtonLabels {
             
@@ -464,7 +349,7 @@ class MainTimerView: UIViewController {
     }
     
     
-    // Timer Action Functions
+    // MARK: Timer Action Functions - increments the total time by one second, updates each respective timer label
     
     func action1 ()
     {
@@ -559,7 +444,7 @@ class MainTimerView: UIViewController {
     
     
     
-    
+    // MARK: Increment Count Function - increments total count by one per button press, updates the respetive counter labels
     
     
     func incrementCount1(_ sender: UITapGestureRecognizer) {
@@ -609,6 +494,7 @@ class MainTimerView: UIViewController {
     
     func incrementCount10(_ sender: UITapGestureRecognizer) {
         
+        // if the identified count behavior label has not been edited
         if countBehaviorLabel10.text == "Edit..." {
             //perform no action
             
@@ -620,61 +506,7 @@ class MainTimerView: UIViewController {
     }
     
     
-    
-//    @IBAction func incrementCount(_ sender: UIButton)
-//    {
-////        incrementButtonLabels = sender.currentTitle!
-//        incrementButtonLabels = ""
-//
-//        
-//        switch incrementButtonLabels {
-//            
-//        case "mainCounterButton1":
-//            totalCount1 += 1
-//            countLabel1.text = String(totalCount1)
-//            
-//        case "mainCounterButton2":
-//            totalCount2 += 1
-//            countLabel2.text = String(totalCount2)
-//            
-//        case "mainCounterButton3":
-//            totalCount3 += 1
-//            countLabel3.text = String(totalCount3)
-//            
-//        case "mainCounterButton4":
-//            totalCount4 += 1
-//            countLabel4.text = String(totalCount4)
-//            
-//        case "mainCounterButton5":
-//            totalCount5 += 1
-//            countLabel5.text = String(totalCount5)
-//            
-//        case "mainCounterButton6":
-//            totalCount6 += 1
-//            countLabel6.text = String(totalCount6)
-//            
-//        case "mainCounterButton7":
-//            totalCount7 += 1
-//            countLabel7.text = String(totalCount7)
-//            
-//        case "mainCounterButton8":
-//            totalCount8 += 1
-//            countLabel8.text = String(totalCount8)
-//            
-//        case "mainCounterButton9":
-//            totalCount9 += 1
-//            countLabel9.text = String(totalCount9)
-//            
-//        case "mainCounterButton10":
-//            totalCount10 += 1
-//            countLabel10.text = String(totalCount10)
-//            
-//        default:
-//            print("Error in Increment Button Func")
-//            
-//        }
-//
-//    }
+    // MARK: Decrement Count Functions - decrements total count by one per button press, updates respective counter labels
     
     @IBAction func decrementCount(_ sender: UIButton)
     {
@@ -720,7 +552,7 @@ class MainTimerView: UIViewController {
             
         case "decBtn10":
             
-            // if the respective count behavior label has not been edited
+            // if the identified count behavior label has not been edited
             if countBehaviorLabel10.text == "Edit..." {
                 // perform no action
                 
@@ -736,6 +568,8 @@ class MainTimerView: UIViewController {
     
 
     
+    // MARK: Long Press Edit Timer Functions - on long pressing each timer button, the label is edited to match
+    //       the 'mainEditLabelTextField'
     
     
     
@@ -817,6 +651,9 @@ class MainTimerView: UIViewController {
     
     
     
+    // MARK: Long Press Edit Counter Functions - on long pressing each counter button, the label is edited to match
+    //       the 'mainEditLabelTextField'
+    
     
     
     func longPressEditCounter1(_ sender: UILongPressGestureRecognizer)
@@ -870,6 +707,9 @@ class MainTimerView: UIViewController {
     }
     
     
+    // MARK: Save Labels from the 'MainTimerView' to User Defaults - which stores this information locally in key, value pairs
+    //       Purpose: When the labels are saved, this device information is available after exiting and re-entering the program
+    
     @IBAction func saveMainTimerLabelsToUserDefaults(_ sender: UIButton)
     {
         
@@ -901,6 +741,9 @@ class MainTimerView: UIViewController {
     }
     
     
+    // MARK: Reset User Defaults Function - resets all of the saved key, value pairs from User Defaults - restores the default labels
+    //       and resets each timer/counter value
+    
     @IBAction func resetUserDefaults(_ sender: UIButton)
     {
         // Reset All User Defaults Keys/Values
@@ -909,6 +752,7 @@ class MainTimerView: UIViewController {
         
         
         // Invalidate All Timers
+        
         timer1.invalidate()
         timer2.invalidate()
         timer3.invalidate()
@@ -923,6 +767,7 @@ class MainTimerView: UIViewController {
         timer12.invalidate()
         
         // Reset All Label Values
+        
         timeBehaviorLabel1.text   = "Introduction"
         timeBehaviorLabel2.text   = "Observing Stationary"
         timeBehaviorLabel3.text   = "Observing Moving"
@@ -953,7 +798,7 @@ class MainTimerView: UIViewController {
         
         
         // Reset Timer/Counter Values
-        
+    
         totalTime1  = 0
         totalTime2  = 0
         totalTime3  = 0
@@ -1009,7 +854,6 @@ class MainTimerView: UIViewController {
         countLabel10.text = "0"
         
     }
-    
     
     
     
@@ -1105,12 +949,13 @@ class MainTimerView: UIViewController {
     
     
     
-    
+    // Standard viewDidLoad default function - registers each timer/counter button with tap and long press gesture recognizers
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        // Creates tap gesture recognizers for timer buttons - sets respective action functions ( e.g. startTimer1() )
+        
         let tapGestureTimer1 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.startTimer1(_:)))
         let tapGestureTimer2 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.startTimer2(_:)))
         let tapGestureTimer3 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.startTimer3(_:)))
@@ -1126,6 +971,9 @@ class MainTimerView: UIViewController {
         let tapGestureTimer13 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.startTimer13(_:)))
         let tapGestureTimer14 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.startTimer14(_:)))
         let tapGestureTimer15 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.startTimer15(_:)))
+        
+        
+        // Creates long press gesture recognizers for timer buttons - sets respective action functions ( e.g. longPressEditTimer1() )
         
         let longPressGestureTimer1 = UILongPressGestureRecognizer(target: self, action: #selector(MainTimerView.longPressEditTimer1(_:)))
         let longPressGestureTimer2 = UILongPressGestureRecognizer(target: self, action: #selector(MainTimerView.longPressEditTimer2(_:)))
@@ -1143,6 +991,9 @@ class MainTimerView: UIViewController {
         let longPressGestureTimer14 = UILongPressGestureRecognizer(target: self, action: #selector(MainTimerView.longPressEditTimer14(_:)))
         let longPressGestureTimer15 = UILongPressGestureRecognizer(target: self, action: #selector(MainTimerView.longPressEditTimer15(_:)))
         
+        
+        // Creates tap gesture recognizers for counter buttons - sets respective action functions ( e.g. incrementCount1() )
+        
         let tapGestureCounter1 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.incrementCount1(_:)))
         let tapGestureCounter2 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.incrementCount2(_:)))
         let tapGestureCounter3 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.incrementCount3(_:)))
@@ -1154,6 +1005,8 @@ class MainTimerView: UIViewController {
         let tapGestureCounter9 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.incrementCount9(_:)))
         let tapGestureCounter10 = UITapGestureRecognizer(target: self, action: #selector(MainTimerView.incrementCount10(_:)))
 
+        
+        // Creates long press gesture recognizers for counter buttons - sets respective action functions ( e.g. longPressEditCounter1() )
         
         let longPressGestureCounter1 = UILongPressGestureRecognizer(target: self, action: #selector(MainTimerView.longPressEditCounter1(_:)))
         let longPressGestureCounter2 = UILongPressGestureRecognizer(target: self, action: #selector(MainTimerView.longPressEditCounter2(_:)))
@@ -1168,7 +1021,7 @@ class MainTimerView: UIViewController {
         
         
         
-        
+        // Add tap gestures to timer buttons
         self.mainTimerButton1.addGestureRecognizer(tapGestureTimer1)
         self.mainTimerButton2.addGestureRecognizer(tapGestureTimer2)
         self.mainTimerButton3.addGestureRecognizer(tapGestureTimer3)
@@ -1186,7 +1039,7 @@ class MainTimerView: UIViewController {
         self.mainTimerButton15.addGestureRecognizer(tapGestureTimer15)
         
         
-        
+        // Add long press gestures to timer buttons
         self.mainTimerButton1.addGestureRecognizer(longPressGestureTimer1)
         self.mainTimerButton2.addGestureRecognizer(longPressGestureTimer2)
         self.mainTimerButton3.addGestureRecognizer(longPressGestureTimer3)
@@ -1204,6 +1057,7 @@ class MainTimerView: UIViewController {
         self.mainTimerButton15.addGestureRecognizer(longPressGestureTimer15)
         
         
+        // Add tap gestures to counter buttons
         self.mainCounterButton1.addGestureRecognizer(tapGestureCounter1)
         self.mainCounterButton2.addGestureRecognizer(tapGestureCounter2)
         self.mainCounterButton3.addGestureRecognizer(tapGestureCounter3)
@@ -1215,6 +1069,8 @@ class MainTimerView: UIViewController {
         self.mainCounterButton9.addGestureRecognizer(tapGestureCounter9)
         self.mainCounterButton10.addGestureRecognizer(tapGestureCounter10)
         
+        
+        // Add long press gestures to counter buttons
         self.mainCounterButton1.addGestureRecognizer(longPressGestureCounter1)
         self.mainCounterButton2.addGestureRecognizer(longPressGestureCounter2)
         self.mainCounterButton3.addGestureRecognizer(longPressGestureCounter3)
@@ -1226,8 +1082,6 @@ class MainTimerView: UIViewController {
         self.mainCounterButton9.addGestureRecognizer(longPressGestureCounter9)
         self.mainCounterButton10.addGestureRecognizer(longPressGestureCounter10)
         
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -1235,8 +1089,13 @@ class MainTimerView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // Standard viewDidAppear default function - invoked when all elements of the view have loaded successfully
+    // Purpose: grab potential key, values stored in user defaults and update their respective labels if successfully retrieved
     override func viewDidAppear(_ animated: Bool)
     {
+        
+        
         // If the stated key exists in User Defaults, set each respective label to the stored value
         
         if let val = UserDefaults.standard.object(forKey: "mainTimedBehaviorLabel1") as? String
@@ -1341,12 +1200,4 @@ class MainTimerView: UIViewController {
         }
     }
     
-    // Unwind Segue Navigation
-    @IBAction func unwindFromReportView(segue: UIStoryboardSegue)
-    {
-        
-    }
-    
-
-
 }

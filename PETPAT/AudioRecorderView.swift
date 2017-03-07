@@ -217,11 +217,14 @@ class AudioRecorderView: UIViewController {
                         self.setupRecorder()
                     }
                     self.recorder.record()
+                    
+                    
 //                    self.meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
 //                                                           target:self,
 //                                                           selector:#selector(AudioRecorderView.updateAudioMeter(_:)),
 //                                                           userInfo:nil,
 //                                                           repeats:true)
+                    
                 } else {
                     print("Permission to record not granted")
                 }
