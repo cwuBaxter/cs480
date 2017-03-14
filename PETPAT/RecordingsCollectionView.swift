@@ -60,6 +60,7 @@ class RecordingsCollectionView: UICollectionViewController {
     }
     
     
+    // Action function for double tap
     func doubleTap(_ rec:UITapGestureRecognizer) {
         if rec.state != .ended {
             return
@@ -72,6 +73,7 @@ class RecordingsCollectionView: UICollectionViewController {
         
     }
     
+    // Action function for long press
     func longPress(_ rec:UILongPressGestureRecognizer) {
         if rec.state != .ended {
             return
@@ -125,6 +127,7 @@ class RecordingsCollectionView: UICollectionViewController {
         
     }
     
+    // Action function for play recording
     func play(_ url:URL) {
         print("playing \(url)")
         
@@ -142,7 +145,7 @@ class RecordingsCollectionView: UICollectionViewController {
         
     }
     
-    
+    // Action function for list all recordings
     func listRecordings() {
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -160,7 +163,7 @@ class RecordingsCollectionView: UICollectionViewController {
         
     }
     
-    
+    // Alert function to prompt user whether to delete file or not
     func askToDelete(_ row:Int) {
         let alert = UIAlertController(title: "Delete",
                                       message: "Delete Recording \(recordings[row].lastPathComponent)?",
@@ -175,6 +178,7 @@ class RecordingsCollectionView: UICollectionViewController {
         self.present(alert, animated:true, completion:nil)
     }
     
+    // Alert function to prompt user whether to rename file or not
     func askToRename(_ row:Int) {
         let recording = self.recordings[row]
         
@@ -200,6 +204,7 @@ class RecordingsCollectionView: UICollectionViewController {
         self.present(alert, animated:true, completion:nil)
     }
     
+    // Alert function to prompt user whether to rename recording or not
     func renameRecording(_ from:URL, to:URL) {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let toURL = documentsDirectory.appendingPathComponent(to.lastPathComponent)
@@ -221,7 +226,7 @@ class RecordingsCollectionView: UICollectionViewController {
         
     }
     
-    
+    // Alert function to prompt user whether to delete recording or not
     func deleteRecording(_ url:URL) {
         
         print("removing file at \(url.absoluteString)")
@@ -244,6 +249,7 @@ class RecordingsCollectionView: UICollectionViewController {
 
 }
 
+// MARK : Extensions
 
 extension RecordingsCollectionView: FileManagerDelegate {
     

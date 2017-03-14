@@ -13,6 +13,8 @@
 		270247CF1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270247CE1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift */; };
 		270247D11E6DAC78000BB72C /* MainRubricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270247D01E6DAC78000BB72C /* MainRubricView.swift */; };
 		270247D31E6DACC2000BB72C /* SecondaryRubricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270247D21E6DACC2000BB72C /* SecondaryRubricView.swift */; };
+		272E4C091E71C1B60058BA4F /* ReportAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272E4C081E71C1B60058BA4F /* ReportAnalysisView.swift */; };
+		27330EC61E70D56900ABF3F1 /* CustomPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27330EC51E70D56900ABF3F1 /* CustomPhotoAlbum.swift */; };
 		27885AE01E6C7A6B002C4745 /* SecondaryTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27885ADF1E6C7A6B002C4745 /* SecondaryTimerView.swift */; };
 		27918C671E6BBEB20010765E /* MainTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27918C661E6BBEB20010765E /* MainTimerView.swift */; };
 		27ADB2DB1E4BDF2F00CC83C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB2DA1E4BDF2F00CC83C9 /* AppDelegate.swift */; };
@@ -22,7 +24,6 @@
 		27ADB2E81E4BDF2F00CC83C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27ADB2E61E4BDF2F00CC83C9 /* LaunchScreen.storyboard */; };
 		27ADB2F31E4BDF2F00CC83C9 /* PETPATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB2F21E4BDF2F00CC83C9 /* PETPATTests.swift */; };
 		27ADB2FE1E4BDF2F00CC83C9 /* PETPATUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB2FD1E4BDF2F00CC83C9 /* PETPATUITests.swift */; };
-		27ADB3381E4CE3C900CC83C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADB3371E4CE3C900CC83C9 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		270247CE1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingCollectionViewCell.swift; sourceTree = "<group>"; };
 		270247D01E6DAC78000BB72C /* MainRubricView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRubricView.swift; sourceTree = "<group>"; };
 		270247D21E6DACC2000BB72C /* SecondaryRubricView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryRubricView.swift; sourceTree = "<group>"; };
+		272E4C081E71C1B60058BA4F /* ReportAnalysisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportAnalysisView.swift; sourceTree = "<group>"; };
+		27330EC51E70D56900ABF3F1 /* CustomPhotoAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPhotoAlbum.swift; path = ../CustomPhotoAlbum.swift; sourceTree = "<group>"; };
 		27885ADF1E6C7A6B002C4745 /* SecondaryTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryTimerView.swift; sourceTree = "<group>"; };
 		27918C661E6BBEB20010765E /* MainTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTimerView.swift; sourceTree = "<group>"; };
 		27ADB2D71E4BDF2F00CC83C9 /* PETPAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PETPAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +67,6 @@
 		27ADB2F91E4BDF2F00CC83C9 /* PETPATUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PETPATUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27ADB2FD1E4BDF2F00CC83C9 /* PETPATUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETPATUITests.swift; sourceTree = "<group>"; };
 		27ADB2FF1E4BDF2F00CC83C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27ADB3371E4CE3C900CC83C9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +133,9 @@
 				270247D21E6DACC2000BB72C /* SecondaryRubricView.swift */,
 				270247C51E6D0E74000BB72C /* AudioRecorderView.swift */,
 				270247CC1E6D2577000BB72C /* RecordingsCollectionView.swift */,
+				27330EC51E70D56900ABF3F1 /* CustomPhotoAlbum.swift */,
+				272E4C081E71C1B60058BA4F /* ReportAnalysisView.swift */,
 				270247CE1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift */,
-				27ADB3371E4CE3C900CC83C9 /* LoginViewController.swift */,
 				27ADB2DA1E4BDF2F00CC83C9 /* AppDelegate.swift */,
 				27ADB2DE1E4BDF2F00CC83C9 /* Main.storyboard */,
 				27ADB2E41E4BDF2F00CC83C9 /* Assets.xcassets */,
@@ -299,7 +302,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				270247CD1E6D2577000BB72C /* RecordingsCollectionView.swift in Sources */,
-				27ADB3381E4CE3C900CC83C9 /* LoginViewController.swift in Sources */,
+				272E4C091E71C1B60058BA4F /* ReportAnalysisView.swift in Sources */,
+				27330EC61E70D56900ABF3F1 /* CustomPhotoAlbum.swift in Sources */,
 				270247CF1E6D3EF4000BB72C /* RecordingCollectionViewCell.swift in Sources */,
 				270247D31E6DACC2000BB72C /* SecondaryRubricView.swift in Sources */,
 				27ADB2E31E4BDF2F00CC83C9 /* PETPAT.xcdatamodeld in Sources */,

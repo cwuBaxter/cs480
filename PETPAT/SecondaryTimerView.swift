@@ -7,6 +7,9 @@
 
 import UIKit
 
+// MARK: Global Variables
+
+// total time
 var secTotalTime1  = 0,
     secTotalTime2  = 0,
     secTotalTime3  = 0,
@@ -20,6 +23,21 @@ var secTotalTime1  = 0,
     secTotalTime11 = 0,
     secTotalTime12 = 0
 
+// total time as a string
+var secTotalTime1String = "",
+    secTotalTime2String = "",
+    secTotalTime3String = "",
+    secTotalTime4String = "",
+    secTotalTime5String = "",
+    secTotalTime6String = "",
+    secTotalTime7String = "",
+    secTotalTime8String = "",
+    secTotalTime9String = "",
+    secTotalTime10String = "",
+    secTotalTime11String = "",
+    secTotalTime12String = ""
+
+// total count
 var secTotalCount1  = 0,
     secTotalCount2  = 0,
     secTotalCount3  = 0,
@@ -32,6 +50,50 @@ var secTotalCount1  = 0,
     secTotalCount10 = 0,
     secTotalCount11 = 0,
     secTotalCount12 = 0
+
+// total count as a string
+var secTotalCount1String = "",
+    secTotalCount2String = "",
+    secTotalCount3String = "",
+    secTotalCount4String = "",
+    secTotalCount5String = "",
+    secTotalCount6String = "",
+    secTotalCount7String = "",
+    secTotalCount8String = "",
+    secTotalCount9String = "",
+    secTotalCount10String = "",
+    secTotalCount11String = "",
+    secTotalCount12String = ""
+
+// timed behavior labels
+var secTimeBehaviorLabel1String = "",
+    secTimeBehaviorLabel2String = "",
+    secTimeBehaviorLabel3String = "",
+    secTimeBehaviorLabel4String = "",
+    secTimeBehaviorLabel5String = "",
+    secTimeBehaviorLabel6String = "",
+    secTimeBehaviorLabel7String = "",
+    secTimeBehaviorLabel8String = "",
+    secTimeBehaviorLabel9String = "",
+    secTimeBehaviorLabel10String = "",
+    secTimeBehaviorLabel11String = "",
+    secTimeBehaviorLabel12String = ""
+
+// counted behavior labels
+var secCountBehaviorLabel1String = "",
+    secCountBehaviorLabel2String = "",
+    secCountBehaviorLabel3String = "",
+    secCountBehaviorLabel4String = "",
+    secCountBehaviorLabel5String = "",
+    secCountBehaviorLabel6String = "",
+    secCountBehaviorLabel7String = "",
+    secCountBehaviorLabel8String = "",
+    secCountBehaviorLabel9String = "",
+    secCountBehaviorLabel10String = "",
+    secCountBehaviorLabel11String = "",
+    secCountBehaviorLabel12String = ""
+
+
 
 class SecondaryTimerView: UIViewController {
     
@@ -58,10 +120,11 @@ class SecondaryTimerView: UIViewController {
     decrementButtonLabels = ""
     
     
+    // Outlet: text field for editing respective label names
     @IBOutlet weak var secondaryEditLabelTextField: UITextField!
     
 
-    
+    // Timer Buttons
     @IBOutlet weak var secondaryTimerButton1: UIButton!
     @IBOutlet weak var secondaryTimerButton2: UIButton!
     @IBOutlet weak var secondaryTimerButton3: UIButton!
@@ -76,7 +139,7 @@ class SecondaryTimerView: UIViewController {
     @IBOutlet weak var secondaryTimerButton12: UIButton!
     
     
-    
+    // Counter Buttons
     @IBOutlet weak var secondaryCounterButton1: UIButton!
     @IBOutlet weak var secondaryCounterButton2: UIButton!
     @IBOutlet weak var secondaryCounterButton3: UIButton!
@@ -91,6 +154,7 @@ class SecondaryTimerView: UIViewController {
     @IBOutlet weak var secondaryCounterButton12: UIButton!
     
     
+    // Timed Behvior Labels
     @IBOutlet weak var secTimedBehaviorLabel1: UILabel!
     @IBOutlet weak var secTimedBehaviorLabel2: UILabel!
     @IBOutlet weak var secTimedBehaviorLabel3: UILabel!
@@ -105,6 +169,7 @@ class SecondaryTimerView: UIViewController {
     @IBOutlet weak var secTimedBehaviorLabel12: UILabel!
     
     
+    // Counted Behavior Labels
     @IBOutlet weak var secCountBehaviorLabel1: UILabel!
     @IBOutlet weak var secCountBehaviorLabel2: UILabel!
     @IBOutlet weak var secCountBehaviorLabel3: UILabel!
@@ -119,6 +184,7 @@ class SecondaryTimerView: UIViewController {
     @IBOutlet weak var secCountBehaviorLabel12: UILabel!
     
     
+    // Timer Labels
     @IBOutlet weak var secTimerLabel1: UILabel!
     @IBOutlet weak var secTimerLabel2: UILabel!
     @IBOutlet weak var secTimerLabel3: UILabel!
@@ -132,7 +198,7 @@ class SecondaryTimerView: UIViewController {
     @IBOutlet weak var secTimerLabel11: UILabel!
     @IBOutlet weak var secTimerLabel12: UILabel!
     
-    
+    // Counter Labels
     @IBOutlet weak var secCountLabel1: UILabel!
     @IBOutlet weak var secCountLabel2: UILabel!
     @IBOutlet weak var secCountLabel3: UILabel!
@@ -148,8 +214,7 @@ class SecondaryTimerView: UIViewController {
     
     
     
-    
-    
+    // MARK: Start Timer functions, initializes each timer object and sets their respective action functions ( e.g. action1() )
     
     func startTimer1(_ sender: UITapGestureRecognizer) {
         
@@ -332,10 +397,7 @@ class SecondaryTimerView: UIViewController {
     }
     
     
-    
-    
-    
-    // Timer Action Functions
+    // MARK: Timer Action Functions - invoked on initialization of each respective timer object and increments the total time by one second, updates each respective timer label
     
     func action1 ()
     {
@@ -412,10 +474,7 @@ class SecondaryTimerView: UIViewController {
     
     
     
-    
-    
-    
-    
+    // MARK: Stop Timer functions - invalidates each respective timer object ( e.g. timer1.invalidate() ) and enables each timer button
     
     @IBAction func stopTimer(_ sender: UIButton)
     {
@@ -468,8 +527,7 @@ class SecondaryTimerView: UIViewController {
     }
     
     
-    
-    
+    // MARK: Increment Count Function - increments total count by one per button press, updates the respetive counter labels; if a label has not been reinitialized (is equal to "Edit...", performs no action.
     
     func incrementCount1(_ sender: UITapGestureRecognizer) {
         
@@ -627,7 +685,7 @@ class SecondaryTimerView: UIViewController {
 
     }
     
-    
+    // MARK: Decrement Count Functions - decrements total count by one per button press, updates respective counter labels; if a label has not been reinitialized (is equal to "Edit...", performs no action.
     
     @IBAction func decrementCount(_ sender: UIButton)
     {
@@ -785,10 +843,13 @@ class SecondaryTimerView: UIViewController {
     }
     
     
+    // MARK: Long Press Edit Action Functions
+    
+    // On long pressing the edit timer label butons, will switch the timer label to match the 'secondaryEditLabelTextField'
+    
     func longPressEditTimer1(_ sender: UILongPressGestureRecognizer) {
         
         secTimedBehaviorLabel1.text = secondaryEditLabelTextField.text
-        testGlobalFunctions()
     }
     
     func longPressEditTimer2(_ sender: UILongPressGestureRecognizer) {
@@ -807,7 +868,6 @@ class SecondaryTimerView: UIViewController {
     }
     
     func longPressEditTimer5(_ sender: UILongPressGestureRecognizer) {
-        print("here")
         secTimedBehaviorLabel5.text = secondaryEditLabelTextField.text
     }
     
@@ -847,6 +907,7 @@ class SecondaryTimerView: UIViewController {
     }
     
     
+    // On long pressing the edit counter label butons, will switch the counter label to match the 'secondaryEditLabelTextField'
     
     func longPressEditCounter1(_ sender: UILongPressGestureRecognizer) {
 
@@ -909,6 +970,7 @@ class SecondaryTimerView: UIViewController {
     }
     
     
+    // Save all timed and counted behavior labels to user defaults (i.e. locally on the device) in key/value pairs
     
     @IBAction func saveSecTimerLabelsToUserDefaults(_ sender: UIButton)
     {
@@ -944,11 +1006,14 @@ class SecondaryTimerView: UIViewController {
     // Allow user to reset labels to their default values
     @IBAction func resetUserDefaults(_ sender: UIButton)
     {
+        
+        // remove all key/value pairs from user defaults
         let appDomain = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: appDomain)
         
         
         // Invalidate All Timers
+        
         timer1.invalidate()
         timer2.invalidate()
         timer3.invalidate()
@@ -963,6 +1028,7 @@ class SecondaryTimerView: UIViewController {
         timer12.invalidate()
         
         // Reset All Label Values
+        
         secTimedBehaviorLabel1.text  = "Edit..."
         secTimedBehaviorLabel2.text  = "Edit..."
         secTimedBehaviorLabel3.text  = "Edit..."
@@ -976,18 +1042,18 @@ class SecondaryTimerView: UIViewController {
         secTimedBehaviorLabel11.text = "Edit..."
         secTimedBehaviorLabel12.text = "Edit..."
         
-        secCountBehaviorLabel1.text  = "Edit..."
-        secTimedBehaviorLabel2.text  = "Edit..."
-        secTimedBehaviorLabel3.text  = "Edit..."
-        secTimedBehaviorLabel4.text  = "Edit..."
-        secTimedBehaviorLabel5.text  = "Edit..."
-        secTimedBehaviorLabel6.text  = "Edit..."
-        secTimedBehaviorLabel7.text  = "Edit..."
-        secTimedBehaviorLabel8.text  = "Edit..."
-        secTimedBehaviorLabel9.text  = "Edit..."
-        secTimedBehaviorLabel10.text = "Edit..."
-        secTimedBehaviorLabel11.text = "Edit..."
-        secTimedBehaviorLabel12.text = "Edit..."
+        secCountBehaviorLabel1.text   = "Edit..."
+        secCountBehaviorLabel2.text   = "Edit..."
+        secCountBehaviorLabel3.text   = "Edit..."
+        secCountBehaviorLabel4.text   = "Edit..."
+        secCountBehaviorLabel5.text   = "Edit..."
+        secCountBehaviorLabel6.text   = "Edit..."
+        secCountBehaviorLabel7.text   = "Edit..."
+        secCountBehaviorLabel8.text   = "Edit..."
+        secCountBehaviorLabel9.text   = "Edit..."
+        secCountBehaviorLabel10.text  = "Edit..."
+        secCountBehaviorLabel11.text  = "Edit..."
+        secCountBehaviorLabel12.text  = "Edit..."
         
         
         
@@ -1043,14 +1109,6 @@ class SecondaryTimerView: UIViewController {
         secCountLabel12.text = "0"
         secTotalCount12 = 0
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -1128,12 +1186,7 @@ class SecondaryTimerView: UIViewController {
 
     }
     
-    
-    
-    
-    
-    
-    
+    // Standard iOS function - invoked when all elements of the view have successfully loaded
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -1199,7 +1252,7 @@ class SecondaryTimerView: UIViewController {
         let secLongPressGestureCounter12 = UILongPressGestureRecognizer(target: self, action: #selector(SecondaryTimerView.longPressEditCounter12(_:)))
 
 
-
+        // add tap gestures to timer buttons
         self.secondaryTimerButton1.addGestureRecognizer(secTapGestureTimer1)
         self.secondaryTimerButton2.addGestureRecognizer(secTapGestureTimer2)
         self.secondaryTimerButton3.addGestureRecognizer(secTapGestureTimer3)
@@ -1213,7 +1266,7 @@ class SecondaryTimerView: UIViewController {
         self.secondaryTimerButton11.addGestureRecognizer(secTapGestureTimer11)
         self.secondaryTimerButton12.addGestureRecognizer(secTapGestureTimer12)
 
-        
+        // add long press gestures to timer buttons
         self.secondaryTimerButton1.addGestureRecognizer(secLongPressGestureTimer1)
         self.secondaryTimerButton2.addGestureRecognizer(secLongPressGestureTimer2)
         self.secondaryTimerButton3.addGestureRecognizer(secLongPressGestureTimer3)
@@ -1227,7 +1280,7 @@ class SecondaryTimerView: UIViewController {
         self.secondaryTimerButton11.addGestureRecognizer(secLongPressGestureTimer11)
         self.secondaryTimerButton12.addGestureRecognizer(secLongPressGestureTimer12)
 
-        
+        // add tap gestures to counter buttons
         self.secondaryCounterButton1.addGestureRecognizer(secTapGestureCounter1)
         self.secondaryCounterButton2.addGestureRecognizer(secTapGestureCounter2)
         self.secondaryCounterButton3.addGestureRecognizer(secTapGestureCounter3)
@@ -1241,7 +1294,7 @@ class SecondaryTimerView: UIViewController {
         self.secondaryCounterButton11.addGestureRecognizer(secTapGestureCounter11)
         self.secondaryCounterButton12.addGestureRecognizer(secTapGestureCounter12)
 
-        
+        // add long press gestures to counter buttons
         self.secondaryCounterButton1.addGestureRecognizer(secLongPressGestureCounter1)
         self.secondaryCounterButton2.addGestureRecognizer(secLongPressGestureCounter2)
         self.secondaryCounterButton3.addGestureRecognizer(secLongPressGestureCounter3)
@@ -1255,6 +1308,8 @@ class SecondaryTimerView: UIViewController {
         self.secondaryCounterButton11.addGestureRecognizer(secLongPressGestureCounter11)
         self.secondaryCounterButton12.addGestureRecognizer(secLongPressGestureCounter12)
     }
+    
+    // Standard iOS function - invoked when all elements of the view have successfully loaded
     
     override func viewDidAppear(_ animated: Bool)
     {
@@ -1357,6 +1412,68 @@ class SecondaryTimerView: UIViewController {
         {
             secCountBehaviorLabel12.text = val
         }
+    }
+    
+    // Standard iOS function - invoked when the view is dismissed/switched
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        // save the current state of the timed behavior labels globally
+        secTimeBehaviorLabel1String = secTimedBehaviorLabel1.text!
+        secTimeBehaviorLabel2String = secTimedBehaviorLabel2.text!
+        secTimeBehaviorLabel3String = secTimedBehaviorLabel3.text!
+        secTimeBehaviorLabel4String = secTimedBehaviorLabel4.text!
+        secTimeBehaviorLabel5String = secTimedBehaviorLabel5.text!
+        secTimeBehaviorLabel6String = secTimedBehaviorLabel6.text!
+        secTimeBehaviorLabel7String = secTimedBehaviorLabel7.text!
+        secTimeBehaviorLabel8String = secTimedBehaviorLabel8.text!
+        secTimeBehaviorLabel9String = secTimedBehaviorLabel9.text!
+        secTimeBehaviorLabel10String = secTimedBehaviorLabel10.text!
+        secTimeBehaviorLabel11String = secTimedBehaviorLabel11.text!
+        secTimeBehaviorLabel12String = secTimedBehaviorLabel12.text!
+        
+        // save the current state of the counted behavior labels globally
+        secCountBehaviorLabel1String = secCountBehaviorLabel1.text!
+        secCountBehaviorLabel2String = secCountBehaviorLabel2.text!
+        secCountBehaviorLabel3String = secCountBehaviorLabel3.text!
+        secCountBehaviorLabel4String = secCountBehaviorLabel4.text!
+        secCountBehaviorLabel5String = secCountBehaviorLabel5.text!
+        secCountBehaviorLabel6String = secCountBehaviorLabel6.text!
+        secCountBehaviorLabel7String = secCountBehaviorLabel7.text!
+        secCountBehaviorLabel8String = secCountBehaviorLabel8.text!
+        secCountBehaviorLabel9String = secCountBehaviorLabel9.text!
+        secCountBehaviorLabel10String = secCountBehaviorLabel10.text!
+        secCountBehaviorLabel11String = secCountBehaviorLabel11.text!
+        secCountBehaviorLabel12String = secCountBehaviorLabel12.text!
+        
+        // save the current state of the total times globally
+        secTotalTime1String = convertToTimestamp(time: secTotalTime1)
+        secTotalTime2String = convertToTimestamp(time: secTotalTime2)
+        secTotalTime3String = convertToTimestamp(time: secTotalTime3)
+        secTotalTime4String = convertToTimestamp(time: secTotalTime4)
+        secTotalTime5String = convertToTimestamp(time: secTotalTime5)
+        secTotalTime6String = convertToTimestamp(time: secTotalTime6)
+        secTotalTime7String = convertToTimestamp(time: secTotalTime7)
+        secTotalTime8String = convertToTimestamp(time: secTotalTime8)
+        secTotalTime9String = convertToTimestamp(time: secTotalTime9)
+        secTotalTime10String = convertToTimestamp(time: secTotalTime10)
+        secTotalTime11String = convertToTimestamp(time: secTotalTime11)
+        secTotalTime12String = convertToTimestamp(time: secTotalTime12)
+
+        // save the current state of the total counts globally
+        secTotalCount1String = String(secTotalCount1)
+        secTotalCount2String = String(secTotalCount2)
+        secTotalCount3String = String(secTotalCount3)
+        secTotalCount4String = String(secTotalCount4)
+        secTotalCount5String = String(secTotalCount5)
+        secTotalCount6String = String(secTotalCount6)
+        secTotalCount7String = String(secTotalCount7)
+        secTotalCount8String = String(secTotalCount8)
+        secTotalCount9String = String(secTotalCount9)
+        secTotalCount10String = String(secTotalCount10)
+        secTotalCount11String = String(secTotalCount11)
+        secTotalCount12String = String(secTotalCount12)
+        
     }
 
     override func didReceiveMemoryWarning() {

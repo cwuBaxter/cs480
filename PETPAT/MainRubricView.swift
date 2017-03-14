@@ -11,6 +11,7 @@ import UIKit
 // Global Variables
 
 
+// holds total count for respective rubric questions globally
 var totalQuestionCount1  = 0,
     totalQuestionCount2  = 0,
     totalQuestionCount3  = 0,
@@ -27,18 +28,73 @@ var totalQuestionCount1  = 0,
     totalQuestionCount14 = 0,
     totalQuestionCount15 = 0
 
+var totalQuestionCount1String = "",
+    totalQuestionCount2String = "",
+    totalQuestionCount3String = "",
+    totalQuestionCount4String = "",
+    totalQuestionCount5String = "",
+    totalQuestionCount6String = "",
+    totalQuestionCount7String = "",
+    totalQuestionCount8String = "",
+    totalQuestionCount9String = "",
+    totalQuestionCount10String = "",
+    totalQuestionCount11String = "",
+    totalQuestionCount12String = "",
+    totalQuestionCount13String = "",
+    totalQuestionCount14String = "",
+    totalQuestionCount15String = ""
+
+
+// holds question label values globally
+var questionLabelString1 = "",
+    questionLabelString2 = "",
+    questionLabelString3 = "",
+    questionLabelString4 = "",
+    questionLabelString5 = "",
+    questionLabelString6 = "",
+    questionLabelString7 = "",
+    questionLabelString8 = "",
+    questionLabelString9 = "",
+    questionLabelString10 = "",
+    questionLabelString11 = "",
+    questionLabelString12 = "",
+    questionLabelString13 = "",
+    questionLabelString14 = "",
+    questionLabelString15 = ""
+
+// holds modal comment values globally
+var popupComment1String = "",
+    popupComment2String = "",
+    popupComment3String = "",
+    popupComment4String = "",
+    popupComment5String = "",
+    popupComment6String = "",
+    popupComment7String = "",
+    popupComment8String = "",
+    popupComment9String = "",
+    popupComment10String = "",
+    popupComment11String = "",
+    popupComment12String = "",
+    popupComment13String = "",
+    popupComment14String = "",
+    popupComment15String = ""
+
+
+
 
 class MainRubricView: UIViewController {
 
-    
+    // Outlet: text field for editing respective label names
     @IBOutlet weak var editLabelTextField: UITextField!
     
+    // holds sender parameter button current title's for switch cases
     var questionButtonLabels  = "",
         incrementButtonLabels = "",
         commentButtonLabels   = "",
         deleteButonLabels     = ""
     
     
+    // button outlets for long press gestures
     @IBOutlet weak var editLabelButton1: UIButton!
     @IBOutlet weak var editLabelButton2: UIButton!
     @IBOutlet weak var editLabelButton3: UIButton!
@@ -55,6 +111,7 @@ class MainRubricView: UIViewController {
     @IBOutlet weak var editLabelButton14: UIButton!
     @IBOutlet weak var editLabelButton15: UIButton!
     
+    // rubric question labels
     @IBOutlet weak var questionLabel1: UILabel!
     @IBOutlet weak var questionLabel2: UILabel!
     @IBOutlet weak var questionLabel3: UILabel!
@@ -71,6 +128,7 @@ class MainRubricView: UIViewController {
     @IBOutlet weak var questionLabel14: UILabel!
     @IBOutlet weak var questionLabel15: UILabel!
     
+    // rubric question count labels
     @IBOutlet weak var countLabel1: UILabel!
     @IBOutlet weak var countLabel2: UILabel!
     @IBOutlet weak var countLabel3: UILabel!
@@ -90,6 +148,7 @@ class MainRubricView: UIViewController {
     
     
     
+    // increments the total count for each respective question - values 1-5 possible; will not increment unless question label is not "Edit..." i.e. has been initialized with a value aside from it's default value.
     @IBAction func incrementCount(_ sender: UIButton)
     {
         incrementButtonLabels = sender.currentTitle!
@@ -270,42 +329,370 @@ class MainRubricView: UIViewController {
     
     // MARK: Modal View Logic
     
+    // modal pop up view
     @IBOutlet weak var modalPopUpComment: UIView!
+    // text view holds comment values/inputs
     @IBOutlet weak var modalPopUpCommentTextView: UITextView!
     
     
+    
+    // If the default value of the respective question labels have been reinitialized from the default value (i.e. label is not "Edit..."), brind the modal pop up into view and allow the user to save comments based on the button's current title
     
     @IBAction func popUpComment(_ sender: UIButton)
     {
         modalPopUpComment.transform = CGAffineTransform(translationX: 936, y: -200)
         
+        commentButtonLabels = sender.currentTitle!
+        
+        switch commentButtonLabels {
+            
+            case "commentButton1":
+                
+                if popupComment1String == "" {
+                    modalPopUpCommentTextView.text = "1: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment1String
+                }
+            
+            case "commentButton2":
+
+                if popupComment2String == "" {
+                    modalPopUpCommentTextView.text = "2: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment2String
+                }
+            
+            case "commentButton3":
+                if popupComment3String == "" {
+                    modalPopUpCommentTextView.text = "3: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment3String
+                }
+            case "commentButton4":
+                if popupComment4String == "" {
+                    modalPopUpCommentTextView.text = "4: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment4String
+                }
+            case "commentButton5":
+                if popupComment5String == "" {
+                    modalPopUpCommentTextView.text = "5: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment5String
+                }
+            case "commentButton6":
+                if popupComment6String == "" {
+                    modalPopUpCommentTextView.text = "6: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment6String
+                }
+            case "commentButton7":
+                if popupComment7String == "" {
+                    modalPopUpCommentTextView.text = "7: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment7String
+                }
+            case "commentButton8":
+                if popupComment8String == "" {
+                    modalPopUpCommentTextView.text = "8: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment8String
+                }
+            case "commentButton9":
+                if popupComment9String == "" {
+                    modalPopUpCommentTextView.text = "9: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment9String
+                }
+            case "commentButton10":
+                if popupComment10String == "" {
+                    modalPopUpCommentTextView.text = "10: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment10String
+                }
+            case "commentButton11":
+                if popupComment11String == "" {
+                    modalPopUpCommentTextView.text = "11: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment11String
+                }
+            case "commentButton12":
+                if popupComment12String == "" {
+                    modalPopUpCommentTextView.text = "12: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment12String
+                }
+            case "commentButton13":
+                if popupComment13String == "" {
+                    modalPopUpCommentTextView.text = "13: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment13String
+                }
+            case "commentButton14":
+                if popupComment14String == "" {
+                    modalPopUpCommentTextView.text = "14: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment14String
+                }
+            case "commentButton15":
+                if popupComment15String == "" {
+                    modalPopUpCommentTextView.text = "15: "
+                } else {
+                    modalPopUpCommentTextView.text = popupComment15String
+                }
+
+        default:
+                print("Error in Comment Button Function - Main Rubric View")
+        }
+        
     }
+    
+    // Dismiss the modal pop up view and save the input to the respective string based on the first two characters of the comment (i.e. '1:' saves to popupComment1String)
     
     @IBAction func saveComment(_ sender: UIButton)
     {
+        
         modalPopUpComment.transform = CGAffineTransform(translationX: -936, y: 200)
+        
+        let modalIndex = modalPopUpCommentTextView.text.index(modalPopUpCommentTextView.text.startIndex, offsetBy: 2)
+        
+        
+        let strIndex = modalPopUpCommentTextView.text.substring(to: modalIndex)
+        
+        
+        
+        switch strIndex {
+            
+        case "1:":
+            popupComment1String = modalPopUpCommentTextView.text
+        case "2:":
+            popupComment2String = modalPopUpCommentTextView.text
+        case "3:":
+            popupComment3String = modalPopUpCommentTextView.text
+        case "4:":
+            popupComment4String = modalPopUpCommentTextView.text
+        case "5:":
+            popupComment5String = modalPopUpCommentTextView.text
+        case "6:":
+            popupComment6String = modalPopUpCommentTextView.text
+        case "7:":
+            popupComment7String = modalPopUpCommentTextView.text
+        case "8:":
+            popupComment8String = modalPopUpCommentTextView.text
+        case "9:":
+            popupComment9String = modalPopUpCommentTextView.text
+        case "10":
+            popupComment10String = modalPopUpCommentTextView.text
+        case "11":
+            popupComment11String = modalPopUpCommentTextView.text
+        case "12":
+            popupComment12String = modalPopUpCommentTextView.text
+        case "13":
+            popupComment13String = modalPopUpCommentTextView.text
+        case "14":
+            
+                popupComment14String = modalPopUpCommentTextView.text
+        case "15":
+                popupComment15String = modalPopUpCommentTextView.text
+            
+        default:
+            
+            print("Error in Comment Button Function - Main Rubric View")
+        }
     }
-    
+
+
+    // dismiss the modal popup view
     
     @IBAction func cancelAddComment(_ sender: UIButton)
     {
         modalPopUpComment.transform = CGAffineTransform(translationX: -936, y: 200)
     }
-    
-    
-    
+
+
+    // prompt the user with an alert view to delete the comment associated with the sender button's current title (i.e. deleteButton1 will clear the comment 1 string)
     @IBAction func deleteComment(_ sender: UIButton)
     {
-
+        
+        deleteButonLabels = sender.currentTitle!
+        
+        let alert = UIAlertController(
+            title: "Delete Comment",
+            message: "Would you like to delete this comment?",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler:
+            { action in
+                
+                // if user pressed 'Cancel', perform no action
+            }
+        ))
+        
+        switch deleteButonLabels {
+            
+            case "deleteButton1":
+                
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment1String = ""
+                    }
+                ))
+            
+                self.present(alert, animated: true, completion: nil)
+                
+            case "deleteButton2":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment2String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton3":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment3String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton4":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment4String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton5":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment5String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton6":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment6String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton7":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment7String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton8":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment8String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton9":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment9String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton10":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment10String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton11":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment11String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton12":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment12String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton13":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment13String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton14":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment14String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+            case "deleteButton15":
+            
+                alert.addAction(UIAlertAction(title: "Delete", style: .default, handler:
+                    { action in
+                        popupComment15String = ""
+                }
+                ))
+                
+                self.present(alert, animated: true, completion: nil)
+            
+        default:
+            
+                print("Error in Delete Comment Function - Main Rubric View")
+        }
     }
-    
-    
-    
-    
-    
-    
+
+
+
     // MARK: Long Press Edit Label Logic
     
+    
+    // long press gesture action functions - sets the text of the respective label (based on the sender of the long press) to equal that of the editLabelTextField
     func editLabel1 (_ sender: UILongPressGestureRecognizer)
     {
         questionLabel1.text = editLabelTextField.text
@@ -354,11 +741,13 @@ class MainRubricView: UIViewController {
     }
     
     
+    // Saves all current rubric question labels to user defaults (i.e. locally to the device) in key/value pairs
     
     @IBAction func saveRubricLabelsToUserDefaults(_ sender: UIButton)
     {
+        
         UserDefaults.standard.set(questionLabel1.text, forKey: "questionLabel1")
-//        UserDefaults.standard.set(questionLabel2.text, forKey: "questionLabel2")
+        UserDefaults.standard.set(questionLabel2.text, forKey: "questionLabel2")
         UserDefaults.standard.set(questionLabel3.text, forKey: "questionLabel3")
         UserDefaults.standard.set(questionLabel4.text, forKey: "questionLabel4")
         UserDefaults.standard.set(questionLabel5.text, forKey: "questionLabel5")
@@ -374,6 +763,8 @@ class MainRubricView: UIViewController {
         UserDefaults.standard.set(questionLabel15.text, forKey: "questionLabel15")
         
     }
+    
+    // Allows the user to reset their user default values and revert back to default values
     
     @IBAction func resetUserDefaults(_ sender: UIButton)
     {
@@ -402,13 +793,13 @@ class MainRubricView: UIViewController {
         
     }
     
+    // Standard iOS function - invoked when all elements of the view have loaded successfully
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // add stylistic conversions to modal view: 'popUpComment'
-        
-        
+    
+        // Creates long press gesture recognizers and initializes their various action functions
         
         let longPressGesture1 = UILongPressGestureRecognizer(target: self, action: #selector(MainRubricView.editLabel1))
         let longPressGesture2 = UILongPressGestureRecognizer(target: self, action: #selector(MainRubricView.editLabel2))
@@ -426,7 +817,7 @@ class MainRubricView: UIViewController {
         let longPressGesture14 = UILongPressGestureRecognizer(target: self, action: #selector(MainRubricView.editLabel14))
         let longPressGesture15 = UILongPressGestureRecognizer(target: self, action: #selector(MainRubricView.editLabel15))
         
-        
+        // add long press gestures to edit rubric question label buttons
         self.editLabelButton1.addGestureRecognizer(longPressGesture1)
         self.editLabelButton2.addGestureRecognizer(longPressGesture2)
         self.editLabelButton3.addGestureRecognizer(longPressGesture3)
@@ -445,8 +836,13 @@ class MainRubricView: UIViewController {
 
     }
 
+    // Standard iOS function - invoked when all elements of the view have loaded successfully
+    
     override func viewDidAppear(_ animated: Bool)
     {
+        
+        // if the stated key value exists in user defaults storage - load the value into the respective rubric question label
+        
         if let val = UserDefaults.standard.object(forKey: "questionLabel1") as? String
         {
             questionLabel1.text = val
@@ -508,6 +904,48 @@ class MainRubricView: UIViewController {
             questionLabel15.text = val
         }
     }
+    
+    // Standard iOS function - invoked when the view dissappears/switches
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        // save all rubric question labels globally
+        questionLabelString1 = questionLabel1.text!
+        questionLabelString2 = questionLabel2.text!
+        questionLabelString3 = questionLabel3.text!
+        questionLabelString4 = questionLabel4.text!
+        questionLabelString5 = questionLabel5.text!
+        questionLabelString6 = questionLabel6.text!
+        questionLabelString7 = questionLabel7.text!
+        questionLabelString8 = questionLabel8.text!
+        questionLabelString9 = questionLabel9.text!
+        questionLabelString10 = questionLabel10.text!
+        questionLabelString11 = questionLabel11.text!
+        questionLabelString12 = questionLabel12.text!
+        questionLabelString13 = questionLabel13.text!
+        questionLabelString14 = questionLabel14.text!
+        questionLabelString15 = questionLabel15.text!
+        
+        // save the total question counts globally
+        totalQuestionCount1String = String(totalQuestionCount1)
+        totalQuestionCount2String = String(totalQuestionCount2)
+        totalQuestionCount3String = String(totalQuestionCount3)
+        totalQuestionCount4String = String(totalQuestionCount4)
+        totalQuestionCount5String = String(totalQuestionCount5)
+        totalQuestionCount6String = String(totalQuestionCount6)
+        totalQuestionCount7String = String(totalQuestionCount7)
+        totalQuestionCount8String = String(totalQuestionCount8)
+        totalQuestionCount9String = String(totalQuestionCount9)
+        totalQuestionCount10String = String(totalQuestionCount10)
+        totalQuestionCount11String = String(totalQuestionCount11)
+        totalQuestionCount12String = String(totalQuestionCount12)
+        totalQuestionCount13String = String(totalQuestionCount13)
+        totalQuestionCount14String = String(totalQuestionCount14)
+        totalQuestionCount15String = String(totalQuestionCount15)
+        
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

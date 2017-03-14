@@ -10,7 +10,7 @@ import UIKit
 // MARK: Global Variables
 
 
-// holds the total time for each timer object
+// holds the total time for each timer object globally
 var totalTime1  = 0,
     totalTime2  = 0,
     totalTime3  = 0,
@@ -27,8 +27,25 @@ var totalTime1  = 0,
     totalTime14 = 0,
     totalTime15 = 0
 
+var totalTime1String = convertToTimestamp(time: totalTime1),
+    totalTime2String = convertToTimestamp(time: totalTime2),
+    totalTime3String = convertToTimestamp(time: totalTime3),
+    totalTime4String = convertToTimestamp(time: totalTime4),
+    totalTime5String = convertToTimestamp(time: totalTime5),
+    totalTime6String = convertToTimestamp(time: totalTime6),
+    totalTime7String = convertToTimestamp(time: totalTime7),
+    totalTime8String = convertToTimestamp(time: totalTime8),
+    totalTime9String = convertToTimestamp(time: totalTime9),
+    totalTime10String = convertToTimestamp(time: totalTime10),
+    totalTime11String = convertToTimestamp(time: totalTime11),
+    totalTime12String = convertToTimestamp(time: totalTime12),
+    totalTime13String = convertToTimestamp(time: totalTime13),
+    totalTime14String = convertToTimestamp(time: totalTime14),
+    totalTime15String = convertToTimestamp(time: totalTime15)
 
-// holds the total count for each counter object
+
+// holds the total count for each counter object globally
+
 var totalCount1  = 0,
     totalCount2  = 0,
     totalCount3  = 0,
@@ -40,6 +57,56 @@ var totalCount1  = 0,
     totalCount9  = 0,
     totalCount10 = 0
 
+var totalCount1String  = String(totalCount1),
+    totalCount2String  = String(totalCount2),
+    totalCount3String  = String(totalCount3),
+    totalCount4String  = String(totalCount4),
+    totalCount5String  = String(totalCount5),
+    totalCount6String  = String(totalCount6),
+    totalCount7String  = String(totalCount7),
+    totalCount8String  = String(totalCount8),
+    totalCount9String  = String(totalCount9),
+    totalCount10String = String(totalCount10)
+
+
+// holds label values globally
+
+var timeBehaviorLabel1String = "",
+    timeBehaviorLabel2String = "",
+    timeBehaviorLabel3String = "",
+    timeBehaviorLabel4String = "",
+    timeBehaviorLabel5String = "",
+    timeBehaviorLabel6String = "",
+    timeBehaviorLabel7String = "",
+    timeBehaviorLabel8String = "",
+    timeBehaviorLabel9String = "",
+    timeBehaviorLabel10String = "",
+    timeBehaviorLabel11String = "",
+    timeBehaviorLabel12String = "",
+    timeBehaviorLabel13String = "",
+    timeBehaviorLabel14String = "",
+    timeBehaviorLabel15String = ""
+
+var countBehaviorLabel1String = "",
+    countBehaviorLabel2String = "",
+    countBehaviorLabel3String = "",
+    countBehaviorLabel4String = "",
+    countBehaviorLabel5String = "",
+    countBehaviorLabel6String = "",
+    countBehaviorLabel7String = "",
+    countBehaviorLabel8String = "",
+    countBehaviorLabel9String = "",
+    countBehaviorLabel10String = ""
+
+
+// Convert integer seconds to HH:MM:SS - globally available function
+func convertToTimestamp (time : Int) -> (String)
+{
+    let hours = Int(time) / 3600
+    let minutes = Int(time) / 60 % 60
+    let seconds = Int(time) % 60
+    return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+}
 
 class MainTimerView: UIViewController {
 
@@ -281,7 +348,16 @@ class MainTimerView: UIViewController {
         timer15 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainTimerView.action15), userInfo: nil, repeats: true)
     }
     
-
+    
+    func createImageScreenshot()
+    {
+        UIGraphicsBeginImageContext(view.bounds.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        CustomPhotoAlbum.sharedInstance.saveImage(image: image!)
+    }
     
     
     // MARK: Stop Timer functions - invalidates each respective timer object ( e.g. timer1.invalidate() ) and enables each timer button
@@ -349,7 +425,7 @@ class MainTimerView: UIViewController {
     }
     
     
-    // MARK: Timer Action Functions - increments the total time by one second, updates each respective timer label
+    // MARK: Timer Action Functions - invoked on initialization of each respective timer object and increments the total time by one second, updates each respective timer label
     
     func action1 ()
     {
@@ -713,6 +789,7 @@ class MainTimerView: UIViewController {
     @IBAction func saveMainTimerLabelsToUserDefaults(_ sender: UIButton)
     {
         
+        // store labels to user defaults by specified key
         UserDefaults.standard.set(timeBehaviorLabel1.text, forKey:  "mainTimedBehaviorLabel1")
         UserDefaults.standard.set(timeBehaviorLabel2.text, forKey:  "mainTimedBehaviorLabel2")
         UserDefaults.standard.set(timeBehaviorLabel3.text, forKey:  "mainTimedBehaviorLabel3")
@@ -751,7 +828,7 @@ class MainTimerView: UIViewController {
         UserDefaults.standard.removePersistentDomain(forName: appDomain)
         
         
-        // Invalidate All Timers
+        // Invalidate all timers
         
         timer1.invalidate()
         timer2.invalidate()
@@ -765,8 +842,12 @@ class MainTimerView: UIViewController {
         timer10.invalidate()
         timer11.invalidate()
         timer12.invalidate()
+        timer13.invalidate()
+        timer14.invalidate()
+        timer15.invalidate()
         
-        // Reset All Label Values
+        
+        // Reset all labels to default values
         
         timeBehaviorLabel1.text   = "Introduction"
         timeBehaviorLabel2.text   = "Observing Stationary"
@@ -797,7 +878,7 @@ class MainTimerView: UIViewController {
         
         
         
-        // Reset Timer/Counter Values
+        // Reset timers/counters to default values
     
         totalTime1  = 0
         totalTime2  = 0
@@ -1095,7 +1176,6 @@ class MainTimerView: UIViewController {
     override func viewDidAppear(_ animated: Bool)
     {
         
-        
         // If the stated key exists in User Defaults, set each respective label to the stored value
         
         if let val = UserDefaults.standard.object(forKey: "mainTimedBehaviorLabel1") as? String
@@ -1198,6 +1278,69 @@ class MainTimerView: UIViewController {
         {
             countBehaviorLabel10.text = val
         }
+    }
+    
+    // Standard iOS function - invoked when the view dissappears/switches
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        // save timed behavior labels globally
+        timeBehaviorLabel1String = timeBehaviorLabel1.text!
+        timeBehaviorLabel2String = timeBehaviorLabel2.text!
+        timeBehaviorLabel3String = timeBehaviorLabel3.text!
+        timeBehaviorLabel4String = timeBehaviorLabel4.text!
+        timeBehaviorLabel5String = timeBehaviorLabel5.text!
+        timeBehaviorLabel6String = timeBehaviorLabel6.text!
+        timeBehaviorLabel7String = timeBehaviorLabel7.text!
+        timeBehaviorLabel8String = timeBehaviorLabel8.text!
+        timeBehaviorLabel9String = timeBehaviorLabel9.text!
+        timeBehaviorLabel10String = timeBehaviorLabel10.text!
+        timeBehaviorLabel11String = timeBehaviorLabel11.text!
+        timeBehaviorLabel12String = timeBehaviorLabel12.text!
+        timeBehaviorLabel13String = timeBehaviorLabel13.text!
+        timeBehaviorLabel14String = timeBehaviorLabel14.text!
+        timeBehaviorLabel15String = timeBehaviorLabel15.text!
+        
+        // save counted behavior labels globally
+        countBehaviorLabel1String = countBehaviorLabel1.text!
+        countBehaviorLabel2String = countBehaviorLabel2.text!
+        countBehaviorLabel3String = countBehaviorLabel3.text!
+        countBehaviorLabel4String = countBehaviorLabel4.text!
+        countBehaviorLabel5String = countBehaviorLabel5.text!
+        countBehaviorLabel6String = countBehaviorLabel6.text!
+        countBehaviorLabel7String = countBehaviorLabel7.text!
+        countBehaviorLabel8String = countBehaviorLabel8.text!
+        countBehaviorLabel9String = countBehaviorLabel9.text!
+        countBehaviorLabel10String = countBehaviorLabel10.text!
+        
+        // save total times globally
+        totalTime1String = convertToTimestamp(time: totalTime1)
+        totalTime2String = convertToTimestamp(time: totalTime2)
+        totalTime3String = convertToTimestamp(time: totalTime3)
+        totalTime4String = convertToTimestamp(time: totalTime4)
+        totalTime5String = convertToTimestamp(time: totalTime5)
+        totalTime6String = convertToTimestamp(time: totalTime6)
+        totalTime7String = convertToTimestamp(time: totalTime7)
+        totalTime8String = convertToTimestamp(time: totalTime8)
+        totalTime9String = convertToTimestamp(time: totalTime9)
+        totalTime10String = convertToTimestamp(time: totalTime10)
+        totalTime11String = convertToTimestamp(time: totalTime11)
+        totalTime12String = convertToTimestamp(time: totalTime12)
+        totalTime13String = convertToTimestamp(time: totalTime13)
+        totalTime14String = convertToTimestamp(time: totalTime14)
+        totalTime15String = convertToTimestamp(time: totalTime15)
+        
+        // save total counts globally
+        totalCount1String = String(totalCount1)
+        totalCount2String = String(totalCount2)
+        totalCount3String = String(totalCount3)
+        totalCount4String = String(totalCount4)
+        totalCount5String = String(totalCount5)
+        totalCount6String = String(totalCount6)
+        totalCount7String = String(totalCount7)
+        totalCount8String = String(totalCount8)
+        totalCount9String = String(totalCount9)
+        totalCount10String = String(totalCount10)
+
     }
     
 }
